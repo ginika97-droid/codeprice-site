@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="See an estimate of a discount code before checkout. CodePrice puts the product price and advertised offer together while you shop.">
+  <title>CodePrice — See it before you buy it</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CodePrice">
+  <meta property="og:title" content="CodePrice — See it before you buy it">
+  <meta property="og:description" content="No discount maths in your head. See an estimate before checkout.">
+  <meta property="og:url" content="https://codeprice.co.uk/">
+  <meta property="og:image" content="https://codeprice.co.uk/assets/codeprice-vintage-bag.jpg">
+  <meta property="og:image:width" content="1500">
+  <meta property="og:image:height" content="844">
+  <meta property="og:image:alt" content="CodePrice’s black vintage-style bag still life with silver accessories and blush details">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CodePrice — See it before you buy it">
+  <meta name="twitter:description" content="See an estimate of a discount code before checkout.">
+  <meta name="twitter:image" content="https://codeprice.co.uk/assets/codeprice-vintage-bag.jpg">
+  <link rel="icon" type="image/png" href="assets/codeprice-store-icon-128.png">
+  <style>
+    :root{--paper:#fff;--ink:#171719;--muted:#706e72;--soft:#f6f5f5;--line:#e5e2e4;--pink:#e4b4bf;--pink-strong:#cc8998;--pink-wash:#f5e8eb;--black:#161618;--shadow:0 14px 36px #18171a12}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:76px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;letter-spacing:-.018em}
+    a{color:inherit}
+    .wrap{width:min(1160px,calc(100% - 44px));margin:0 auto}
+    .topbar{height:66px;position:relative;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
+    .nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+    .wordmark{display:flex;align-items:center;text-decoration:none;font-weight:800;font-size:25px;letter-spacing:-1.9px}
+    .wordmark em,.wordmark sup{font-style:normal;color:var(--pink-strong)}
+    .wordmark sup{font-size:9px;letter-spacing:0;vertical-align:top;margin:2px 0 0 2px}
+    .navlinks{display:flex;align-items:center;gap:28px;font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#5d5a5e}
+    .navlinks a{text-decoration:none}.navlinks a:hover{color:#a96678}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:#fff!important;text-decoration:none;padding:13px 17px;font-size:10px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;transition:transform .18s,box-shadow .18s}
+    .nav-cta:hover,.button:hover{transform:translateY(-2px);box-shadow:0 6px 14px #17171924}
+    .hero{padding:35px 0 0;overflow:hidden}
+    .hero-intro{text-align:center;padding:0 18px}
+    .eyebrow{font:9px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:#858187}
+    h1{font-size:clamp(52px,7vw,84px);line-height:.89;letter-spacing:-.095em;margin:16px auto 12px;max-width:850px}
+    h1 em{font-style:normal;color:var(--pink-strong)}
+    .hero-copy{max-width:590px;margin:0 auto;color:#666369;font-size:14px;line-height:1.75}
+    .hero-actions{display:flex;justify-content:center;align-items:center;gap:20px;margin-top:20px}
+    .text-link{font-size:10px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--pink);padding:8px 0}
+    .stage{position:relative;width:min(100%,1180px);margin:15px auto 0;aspect-ratio:16/9}
+    .still{position:absolute;left:14%;top:2%;width:72%;aspect-ratio:16/9;background:#fff}
+    .still img{display:block;width:100%;height:100%;object-fit:contain}
+    .connectors{position:absolute;inset:0;width:100%;height:100%;z-index:1;overflow:visible;pointer-events:none}
+    .connectors path{fill:none;stroke:#777379;stroke-width:1.5;vector-effect:non-scaling-stroke}
+    .connectors circle{fill:var(--pink-strong);stroke:#fff;stroke-width:3;vector-effect:non-scaling-stroke}
+    .callout{position:absolute;z-index:2;background:#fff;border:1px solid #dfdcde;padding:13px 15px;box-shadow:0 12px 30px #1717190d;min-height:82px}
+    .callout small{display:block;font:8px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:#777277;margin-bottom:7px}
+    .callout strong{display:block;font-size:20px;line-height:1.05;letter-spacing:-.04em}
+    .callout span{display:block;font-size:9px;color:#777277;margin-top:5px;line-height:1.4}
+    .price{left:1.5%;top:48%;width:205px}
+    .discount{right:1.5%;top:8%;width:205px}
+    .calculated{right:1.5%;bottom:9%;width:220px;background:var(--black);color:#fff;border-color:var(--black)}
+    .calculated small,.calculated span{color:#d2cdd0}
+    .calculated strong{font-size:27px}
+    .calculated strong em{font-style:normal;color:#f0cbd3}
+    .stage-caption{position:absolute;bottom:1%;left:14%;font:8px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.13em;text-transform:uppercase;color:#888488}
+    @keyframes reveal-up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes draw-line{to{stroke-dashoffset:0}}
+    @keyframes dot-pop{0%{opacity:0;transform:scale(.45)}70%{opacity:1;transform:scale(1.18)}100%{opacity:1;transform:scale(1)}}
+    .hero-intro .eyebrow,.hero-intro h1,.hero-copy,.hero-actions{animation:reveal-up .65s cubic-bezier(.2,.7,.2,1) both}
+    .hero-intro h1{animation-delay:.08s}.hero-copy{animation-delay:.16s}.hero-actions{animation-delay:.24s}
+    .connectors path{stroke-dasharray:900;stroke-dashoffset:900;animation:draw-line 1.05s cubic-bezier(.25,.75,.25,1) .2s forwards}
+    .connectors path:nth-of-type(2){animation-delay:.36s}.connectors path:nth-of-type(3){animation-delay:.52s}
+    .connectors circle{transform-box:fill-box;transform-origin:center;animation:dot-pop .42s ease-out .85s both}
+    .connectors circle:nth-of-type(2){animation-delay:1s}.connectors circle:nth-of-type(3){animation-delay:1.15s}
+    .callout{transition:transform .22s ease,box-shadow .22s ease}
+    .callout:hover{transform:translateY(-3px);box-shadow:0 16px 34px #17171918}
+    .note,.step{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+    .note:hover{transform:translateY(-2px)}
+    .step:hover{transform:translateY(-4px);border-color:#d7a4b0;box-shadow:var(--shadow)}
+    .js-motion .reveal{opacity:0;translate:0 24px;transition:opacity .72s cubic-bezier(.2,.7,.2,1),translate .72s cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,0ms)}
+    .js-motion .reveal.is-visible{opacity:1;translate:0 0}
+    .note-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:17px 0;margin-top:1px}
+    .note-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .note b{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+    .note p{font-size:11px;line-height:1.6;color:var(--muted);margin:6px 0 0}
+    .section{padding:80px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:30px}
+    .section-head h2{font-size:clamp(34px,4.4vw,52px);line-height:.95;letter-spacing:-.075em;margin:13px 0 0;max-width:560px}
+    .section-head p{max-width:380px;margin:0;color:var(--muted);font-size:13px;line-height:1.7}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+    .step{min-height:190px;border:1px solid var(--line);padding:21px;background:linear-gradient(145deg,#fff,#faf9f9)}
+    .step-number{font:10px ui-monospace,monospace;letter-spacing:.12em;color:#aa7480}
+    .step h3{font-size:17px;letter-spacing:-.04em;margin:25px 0 7px}
+    .step p{font-size:12px;color:var(--muted);line-height:1.65;margin:0}
+    .dark-section{background:#171719;color:#fff;position:relative;overflow:hidden}
+    .dark-section:after{content:"";position:absolute;right:-150px;top:-210px;width:420px;height:420px;border:1px solid #ffffff1b;border-radius:50%;box-shadow:0 0 0 30px #ffffff08,0 0 0 62px #ffffff05}
+    .dark-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:center;position:relative;z-index:1}
+    .dark-section .eyebrow{color:#c8c4c8}
+    .dark-section h2{font-size:clamp(42px,5.4vw,65px);line-height:.9;letter-spacing:-.085em;margin:16px 0}
+    .dark-section h2 em{font-style:normal;color:#efcbd3}
+    .dark-section p{max-width:430px;color:#c7c3c7;font-size:13px;line-height:1.7}
+    .estimate{background:#242326;border:1px solid #69646a;padding:23px;box-shadow:0 20px 55px #0005}
+    .estimate-label{font:9px ui-monospace,monospace;letter-spacing:.15em;text-transform:uppercase;color:#c6c0c5}
+    .estimate-total{font-size:58px;letter-spacing:-.075em;font-weight:750;margin:4px 0 0}
+    .estimate-saving{color:#efcbd3;font-size:13px;font-weight:700}
+    .estimate-rule{height:1px;background:#ffffff2d;margin:17px 0 12px}
+    .estimate-row{display:flex;justify-content:space-between;padding:5px 0;font-size:11px;color:#d7d3d7}
+    .estimate-row strong{color:#fff}
+    .example-tag{display:inline-block;margin-top:12px;padding:7px 10px;background:#f0dce1;color:#30262a;font:700 8px ui-monospace,monospace;letter-spacing:.11em}
+    .fine-print{font-size:9px!important;color:#aaa5ab!important;margin:11px 0 0!important}
+    .privacy-section{background:#f5f4f4}
+    .privacy-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
+    .privacy-grid h2{font-size:clamp(36px,4vw,49px);letter-spacing:-.075em;line-height:.94;margin:13px 0}
+    .privacy-copy{border-top:1px solid #dcd9db;padding-top:15px;color:#67646a;font-size:13px;line-height:1.75}
+    .faq-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:60px}
+    .faq-grid h2{font-size:clamp(36px,4vw,48px);letter-spacing:-.08em;line-height:.94;margin:13px 0}
+    .faq-list details{border-bottom:1px solid var(--line);padding:16px 0}
+    .faq-list summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-size:13px;font-weight:700}
+    .faq-list summary::-webkit-details-marker{display:none}
+    .faq-list summary:after{content:"+";color:#ae7a86;font-size:17px;font-weight:400}
+    .faq-list details[open] summary:after{content:"−"}
+    .faq-list p{color:var(--muted);font-size:12px;line-height:1.7;max-width:620px}
+    .contact{border-top:1px solid var(--line);padding:31px 0}
+    .contact-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .contact h2{font-size:21px;letter-spacing:-.05em;margin:0 0 5px}
+    .contact p{font-size:12px;color:var(--muted);margin:0}
+    footer{border-top:1px solid var(--line);padding:17px 0;color:#858187;font-size:10px}
+    .footer-row{display:flex;justify-content:space-between;gap:20px}
+    .footer-links{display:flex;gap:20px}.footer-links a{text-decoration:none}
+    @media(max-width:760px){
+      .wrap{width:min(100% - 30px,1160px)}.topbar{height:57px}.wordmark{font-size:21px}.navlinks{gap:0}.navlinks a:not(.nav-cta){display:none}.nav-cta{padding:10px 12px;font-size:8px}
+      .hero{padding-top:31px}.hero-intro{padding:0 8px}h1{font-size:58px}.hero-copy{font-size:12px}.hero-actions{gap:14px}.button{font-size:9px;padding:12px 13px}.text-link{font-size:9px}
+      .stage{aspect-ratio:1/1.08;margin-top:18px}.still{left:4%;top:20%;width:92%}.price{left:2%;top:2%;width:44%;min-height:70px;padding:9px 10px}.discount{right:2%;top:2%;width:44%;min-height:70px;padding:9px 10px}.calculated{right:2%;bottom:4%;width:49%;min-height:76px;padding:9px 10px}.callout small{font-size:7px;margin-bottom:4px}.callout strong{font-size:16px}.callout span{font-size:8px;margin-top:3px}.calculated strong{font-size:21px}.connectors{display:none}.stage-caption{left:4%;bottom:1%;font-size:7px}
+      .note-grid{grid-template-columns:1fr;gap:13px}.note{border-bottom:1px solid var(--line);padding-bottom:12px}.note:last-child{border:0;padding-bottom:0}.section{padding:59px 0}.section-head{display:block}.section-head p{margin-top:15px}.steps{grid-template-columns:1fr}.step{min-height:0}.step h3{margin-top:17px}.dark-grid,.privacy-grid,.faq-grid{grid-template-columns:1fr;gap:25px}.dark-section .section{padding:59px 0}.estimate-total{font-size:50px}.contact-row{align-items:flex-start;flex-direction:column}.footer-row{flex-direction:column}.footer-links{gap:15px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><nav class="wrap nav" aria-label="Main navigation">
+    <a class="wordmark" href="#top" aria-label="CodePrice home"><span>code<em>price</em><sup>®</sup></span></a>
+    <div class="navlinks"><a href="#how">How it works</a><a href="#privacy">Privacy</a><a class="nav-cta" href="mailto:hello@codeprice.co.uk?subject=CodePrice%20launch">Get CodePrice ↗</a></div>
+  </nav></header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-intro"><div class="eyebrow">The price, before checkout&nbsp; / &nbsp;CodePrice</div><h1 id="hero-title">See it <em>before</em><br>you buy it.</h1><p class="hero-copy">No discount maths in your head. No waiting until checkout to try the code. CodePrice estimates the price on the product page, so you can see it before you buy.</p><div class="hero-actions"><a class="button" href="mailto:hello@codeprice.co.uk?subject=CodePrice%20launch%20updates">Get CodePrice&nbsp; ↗</a><a class="text-link" href="#how">How the estimate works</a></div></div>
+      <div class="stage" aria-label="Product price example connected to a fashion still life">
+        <div class="still"><img src="assets/codeprice-vintage-bag.jpg" alt="A wide vintage black leather bag with silver hardware, black wraparound sunglasses, red lipstick, silver jewellery and pale-pink fabric on a white background"></div>
+        <svg class="connectors" viewBox="0 0 1000 562.5" preserveAspectRatio="none" aria-hidden="true"><path d="M 205 311 C 285 280, 410 155, 520 116"></path><circle cx="520" cy="116" r="5"></circle><path d="M 785 86 C 700 90, 610 140, 490 170"></path><circle cx="490" cy="170" r="5"></circle><path d="M 765 470 C 715 425, 670 350, 620 310"></path><circle cx="620" cy="310" r="5"></circle></svg>
+        <div class="callout price"><small>Site’s price</small><strong>£94.00</strong><span>The price shown on this product page</span></div>
+        <div class="callout discount"><small>Discount set by the site</small><strong>30% off</strong><span>Example offer · terms may apply</span></div>
+        <div class="callout calculated"><small>Price calculated after CodePrice is used</small><strong><em>£65.80</em></strong><span>Estimated total · you save £28.20</span></div>
+        <div class="stage-caption">An example offer · Final total confirmed by the retailer</div>
+      </div>
+    </section>
+    <section class="note-strip" aria-label="CodePrice at a glance"><div class="wrap note-grid"><div class="note"><b>See the offer in context</b><p>Product price and advertised discount together on the page.</p></div><div class="note"><b>Skip checkout guesswork</b><p>Get an estimate before trying a code at checkout.</p></div><div class="note"><b>Make your call</b><p>Check the retailer’s terms and confirm the final price before paying.</p></div></div></section>
+    <section class="section" id="how"><div class="wrap"><div class="section-head"><div><div class="eyebrow">The useful bit</div><h2>Less mental maths.<br>More time to decide.</h2></div><p>CodePrice brings the visible product price and advertised offer together, so you can understand the possible saving before you reach checkout.</p></div><div class="steps"><article class="step"><div class="step-number">01 / FIND</div><h3>Open a product page</h3><p>Choose a product page in Chrome and open CodePrice when you want to check it.</p></article><article class="step"><div class="step-number">02 / ESTIMATE</div><h3>See the price after the code</h3><p>When it can identify the product price and offer, CodePrice shows an estimate and saving.</p></article><article class="step"><div class="step-number">03 / CHECK</div><h3>Confirm with the retailer</h3><p>Retailer rules decide the final amount. Check eligibility, delivery, tax and exclusions before paying.</p></article></div></div></section>
+    <section class="section dark-section" id="privacy"><div class="wrap dark-grid"><div><div class="eyebrow">Your page stays yours</div><h2>Useful maths.<br><em>Kept local.</em></h2><p>CodePrice reads relevant product and offer information from the active page when you open the extension. The scan runs in your browser; page content isn’t sent to CodePrice.</p><p>It doesn’t scan tabs in the background or keep a browsing history. Read the full <a href="privacy.html">Privacy Policy</a>.</p></div><div class="estimate" aria-label="Illustrative CodePrice price calculation"><div class="estimate-label">Price after the example code</div><div class="estimate-total">£65.80</div><div class="estimate-saving">You save £28.20</div><div class="estimate-rule"></div><div class="estimate-row"><span>Site’s price</span><strong>£94.00</strong></div><div class="estimate-row"><span>Site’s advertised discount</span><strong>30% off</strong></div><div class="example-tag">ILLUSTRATIVE EXAMPLE</div><p class="fine-print">Offer terms and exclusions can change the final price. Confirm at checkout.</p></div></div></section>
+    <section class="section"><div class="wrap privacy-grid"><div><div class="eyebrow">Honest estimates</div><h2>Clear numbers.<br>Real-world caveats.</h2></div><div class="privacy-copy">Promotions don’t work the same way on every item. Some shops apply discounts only in the basket or exclude selected products. CodePrice shows an estimate when it can read the relevant details; the retailer’s checkout is the final word.</div></div></section>
+    <section class="section" id="faq"><div class="wrap faq-grid"><div><div class="eyebrow">Quick answers</div><h2>A little more detail.</h2></div><div class="faq-list"><details><summary>Does CodePrice work on every shop?</summary><p>Retailer pages vary. CodePrice is designed to scan the active product page, but it may not recognise every layout, dynamic price or offer format.</p></details><details><summary>Will it know if a code definitely works?</summary><p>No. It estimates from price and promotion information visible on the page. Only the retailer can confirm eligibility and the final checkout total.</p></details><details><summary>What information does CodePrice use?</summary><p>When opened, it reads product price and promotion information from the selected active tab and processes the scan locally. See the <a href="privacy.html">Privacy Policy</a> for details.</p></details><details><summary>Is the extension available now?</summary><p>CodePrice is being prepared for its Chrome Web Store launch. The store link will be added here once the listing is public.</p></details></div></div></section>
+    <section class="contact"><div class="wrap contact-row"><div><h2>Questions or feedback?</h2><p>Contact CodePrice at <a href="mailto:hello@codeprice.co.uk">hello@codeprice.co.uk</a>.</p></div><a class="button" href="mailto:hello@codeprice.co.uk">Email CodePrice ↗</a></div></section>
+  </main>
+  <footer><div class="wrap footer-row"><span>© 2026 CodePrice</span><div class="footer-links"><a href="privacy.html">Privacy</a><a href="mailto:hello@codeprice.co.uk">Contact</a><a href="#top">Back to top ↑</a></div></div></footer>
+  <script>
+    (()=>{
+      const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduceMotion||!('IntersectionObserver' in window)) return;
+      const items=document.querySelectorAll('.note,.step,.dark-grid > div,.privacy-grid > div,.faq-grid > div,.contact-row,.footer-row');
+      document.documentElement.classList.add('js-motion');
+      items.forEach((item,index)=>{
+        item.classList.add('reveal');
+        item.style.setProperty('--reveal-delay',`${(index%3)*70}ms`);
+      });
+      const observer=new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+          if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}
+        });
+      },{threshold:.12,rootMargin:'0px 0px -7% 0px'});
+      items.forEach((item)=>observer.observe(item));
+    })();
+  </script>
+</body>
+</html>
